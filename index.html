@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Urna Eletrônica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="urna">
+    <!-- TELA DA URNA -->
+    <div class="tela-container" id="tela">
+        <div class="tela-topo">
+            <div class="info-voto">
+                <h3 id="instrucao-voto">SEU VOTO VAI PARA</h3>
+                <div class="cargo-nome" id="cargo-nome">Carregando...</div>
+                <div class="numero-container">
+                    <span class="numero-label">Número:</span>
+                    <div id="digitos-area"></div>
+                </div>
+                <div class="detalhes-candidato" id="detalhes">
+                    <!-- Preenchido via JavaScript -->
+                </div>
+            </div>
+            <!-- Div de fotos atualizada -->
+            <div class="fotos-candidato-area" id="fotos-area">
+                <!-- Inserido dinamicamente via JS -->
+            </div>
+        </div>
+        <div class="tela-rodape" id="rodape">
+            Aperte a tecla:<br>
+            <b style="color: green;">CONFIRMA</b> para APURAR este voto<br>
+            <b style="color: red;">CORRIGE</b> para REINICIAR este voto
+        </div>
+    </div>
+
+    <!-- TECLADO DA URNA -->
+    <div class="teclado">
+        <div class="teclado-titulo">JUSTIÇA ELEITORAL</div>
+        <div class="numeros-grid">
+            <button class="btn-num" onclick="inserir(1)">1</button>
+            <button class="btn-num" onclick="inserir(2)">2</button>
+            <button class="btn-num" onclick="inserir(3)">3</button>
+            <button class="btn-num" onclick="inserir(4)">4</button>
+            <button class="btn-num" onclick="inserir(5)">5</button>
+            <button class="btn-num" onclick="inserir(6)">6</button>
+            <button class="btn-num" onclick="inserir(7)">7</button>
+            <button class="btn-num" onclick="inserir(8)">8</button>
+            <button class="btn-num" onclick="inserir(9)">9</button>
+            <div></div>
+            <button class="btn-num" onclick="inserir(0)">0</button>
+            <div></div>
+        </div>
+        <div class="botoes-controle">
+            <button class="btn-controle btn-branco" onclick="votarBranco()">BRANCO</button>
+            <button class="btn-controle btn-corrige" onclick="corrigir()">CORRIGE</button>
+            <button class="btn-controle btn-confirma" onclick="confirmar()">CONFIRMA</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

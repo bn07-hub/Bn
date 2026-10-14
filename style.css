@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+body {
+    background-color: #eef2f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+.urna {
+    background-color: #dbdadb;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
+    border: 4px solid #b5b4b5;
+    max-width: 950px;
+    width: 100%;
+}
+/* Tela da Urna */
+.tela-container {
+    flex: 1;
+    background: linear-gradient(135deg, #e3ede4 0%, #cbdacf 100%);
+    border: 5px inset #a0b0a5;
+    padding: 20px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.tela-topo {
+    display: flex;
+    justify-content: space-between;
+    height: 300px;
+}
+.info-voto {
+    flex: 1;
+}
+.info-voto h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.cargo-nome {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+    height: 30px;
+}
+.numero-container {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+.numero-label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+.digito-box {
+    width: 30px;
+    height: 40px;
+    border: 2px solid #000;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 5px;
+    background: rgba(255,255,255,0.5);
+}
+.digito-box.pisca {
+    animation: piscar 0.8s infinite;
+}
+@keyframes piscar {
+    0% { border-color: #000; }
+    50% { border-color: transparent; }
+    100% { border-color: #000; }
+}
+.detalhes-candidato {
+    margin-top: 15px;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+/* Área de Fotos Lateral (Governador/Presidente usam foto de vice pequena embaixo) */
+.fotos-candidato-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.container-foto {
+    margin-bottom: 5px;
+    text-align: right;
+}
+.container-foto img {
+    width: 95px;
+    height: 125px;
+    border: 2px solid #000;
+    background-color: #fff;
+    object-fit: cover;
+}
+.container-foto span {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+}
+.container-foto.pequeno img {
+    width: 75px;
+    height: 95px;
+}
+
+.tela-rodape {
+    border-top: 2px solid #000;
+    padding-top: 10px;
+    font-size: 13px;
+}
+.aviso-grande {
+    font-size: 26px;
+    font-weight: bold;
+    color: red;
+    animation: piscar 0.8s infinite;
+}
+.tela-fim {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 90px;
+    font-weight: bold;
+    height: 100%;
+    width: 100%;
+}
+/* Teclado da Urna */
+.teclado {
+    width: 340px;
+    background-color: #404040;
+    margin-left: 30px;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.teclado-titulo {
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.numeros-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+.btn-num {
+    background: linear-gradient(135deg, #222 0%, #111 100%);
+    color: #fff;
+    border: none;
+    height: 55px;
+    font-size: 26px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0px 4px 0px #000;
+}
+.btn-num:active {
+    transform: translateY(3px);
+    box-shadow: 0px 1px 0px #000;
+}
+.botoes-controle {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+.btn-controle {
+    border: none;
+    height: 50px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0px 3px 0px rgba(0,0,0,0.4);
+}
+.btn-controle:active {
+    transform: translateY(2px);
+    box-shadow: 0px 1px 0px rgba(0,0,0,0.4);
+}
+.btn-branco { background-color: #ffffff; color: #000; }
+.btn-corrige { background-color: #f05d5e; color: #000; }
+.btn-confirma { background-color: #48a97a; color: #000; height: 60px; grid-row: span 1; }
